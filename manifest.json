@@ -1,0 +1,31 @@
+{
+	"name": "Link audit, link checker. Find broken links"
+	,"version": "0.1"
+	,"manifest_version": 2
+	,"background":{
+		"scripts": [
+			"lib/js/background.js"
+			,"lib/js/constants.js"
+		]
+	}
+	,"options_page": "options.html"
+	,"description": "This extension validates links and searches for content strings"
+	,"icons": {
+		"48": "lib/i/48.png"
+	}
+	,"browser_action": {
+		"default_icon": "lib/i/48.png"
+		,"default_title": "Link audit"
+	}
+	,"permissions": [
+		"tabs"
+		,"http://*/*"
+		,"https://*/*"
+	],
+	"content_scripts": [{
+		"matches": ["http://*/*","https://*/*"]
+		,"js":["lib/js/constants.js","lib/js/underscore.js","lib/js/zepto.js","lib/js/content.js"]
+		,"css":["lib/css/link-audit.css"]
+	}]
+
+}
