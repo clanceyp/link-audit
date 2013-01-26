@@ -12,7 +12,7 @@
 <style type="text/css">
 	body {
 		/*background-image: url("lib/i/greentiles.png");*/
-		background-color: #cecece ;
+		background-color: #efefef ;
 		font-family: sans-serif;
 		font-size:70%;
 	}
@@ -20,8 +20,8 @@
 		background-color:#fff;
 		border: 1px solid #333;
 		border-radius:10px;
-		box-shadow: 10px 10px 10px rgba(0,0,0,0.7);
-		margin:60px auto;
+		box-shadow: 10px 10px 10px rgba(0,0,0,0.5);
+		margin:30px auto;
 		padding:20px;
 		width:600px;
 	}
@@ -29,6 +29,21 @@
 		margin-top:0;
 		padding-top:0;
 	}
+	label {
+		display: inline-block;
+		margin-bottom: 4px;
+	}
+	textarea {
+		display: block;
+		min-height: 80px;
+		min-width:400px;
+	}
+	fieldset {
+		border: 0 none;
+		margin: 0;
+		padding: 0;
+	}
+	p {}
 </style>	
 </head> 
 	<body>
@@ -37,9 +52,38 @@
 			<p>
 				Use the form below to enable/disable features
 			</p>
-			<fieldset></fieldset>
+			<fieldset>
+
+				<p>
+					<label for="blacklist">Blacklist</label>
+					<textarea id="blacklist"></textarea>
+				</p>
+				<p>
+					<label for="whitelist">White list</label>
+					<textarea id="whitelist"></textarea>
+				</p>
+				<p>
+					<label for="requestType">Request type</label>
+					<select id="requestType">
+						<option>HEAD</option>
+						<option>GET</option>
+					</select>
+				</p>
+				<p>
+					<label for="contentStrings">String match</label>
+					(<label for="ignore404">String match only <input type="checkbox" id="ignore404" /></label>)
+					<textarea id="contentStrings"></textarea>
+				</p>
+				<p>
+
+				</p>
+				<p>
+					<label for="showStatusCode">Show status codes <input type="checkbox" id="showStatusCode" /></label>
+				</p>
+
+			</fieldset>
 			<p class="button">
-				<input type="reset" id="resetButton" value="Reset default options"/>
+				<input type="button" class="reset" id="resetButton" value="Reset default options"/>
 			</p>
 		</form>
 	</body>
