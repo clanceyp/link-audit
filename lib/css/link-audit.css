@@ -1,0 +1,17 @@
+
+a.CE-linkAudit{
+    -webkit-transition-property: box-shadow, background-color;
+    -webkit-transition-duration: 300ms, 300ms;
+    -webkit-transition-timing-function: linear, linear;
+}
+#CE-linkAuditDisplay {
+    background-color: #fff;
+    border:1px solid #888;
+    border-radius:5px;
+    box-shadow: 5px 5px 5px rgba(0,0,0,0.5);
+    padding: 10px;
+    position: fixed;
+    right:50px;
+    top:50px;
+    z-index: 9999;
+}

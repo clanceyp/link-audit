@@ -10,6 +10,7 @@
 
 
 <style type="text/css">
+	@import url(http://fonts.googleapis.com/css?family=Mr+Bedfort);
 	body {
 		/*background-image: url("lib/i/greentiles.png");*/
 		background-color: #efefef ;
@@ -25,9 +26,15 @@
 		padding:20px;
 		width:600px;
 	}
-	h1 {
-		margin-top:0;
+
+	h1,h2 {
+		font-family: "Mr Bedfort", "Dawning of a New Day", sans-serif;
+		font-size: 4em;
+		margin:0;
 		padding-top:0;
+	}
+	h2 {
+		font-size: 2em;
 	}
 	label {
 		display: inline-block;
@@ -44,6 +51,44 @@
 		padding: 0;
 	}
 	p {}
+	*.hidden {
+		display: none;
+	}
+	nav {
+
+	}
+	nav ul {
+		list-style: none;
+		margin:0 0 0 20px;
+		padding: 0;
+	}
+	nav li {
+		background-color: #eee;
+		border:1px solid #cecece;
+		border-bottom: 1px solid #eee;
+		border-radius: 5px 5px 0 0;
+		display: inline-block;
+		margin:0 3px 0 0;
+		padding:0;
+	}
+	nav li.selected {
+		background-color: #fff;
+		border-bottom: 1px solid #fff;
+		bottom: -1px;
+		position: relative;
+		z-index: 1;
+	}
+	nav li a {
+		display: block;
+		font-size: 1.2em;
+		padding:5px 12px;
+		text-decoration: none;
+	}
+	section {
+		border: 1px solid #cecece;
+		border-radius: 5px ;
+		padding: 10px;
+	}
 </style>	
 </head> 
 	<body>
@@ -52,8 +97,39 @@
 			<p>
 				Use the form below to enable/disable features
 			</p>
-			<fieldset>
+			<nav>
+				<ul>
+					<li class="selected"><a href="#sectionSettings">Settings</a></li>
+					<li><a href="#sectionAdvancedSettings">Advanced settings</a></li>
+					<!--
+					<li><a href="#sectionHowTo">How to...</a></li>
+					<li><a href="#sectionDonate">Donate</a></li>
+					-->
+				</ul>
+			</nav>
 
+			<section id="sectionAdvancedSettings" class="hidden">
+				<fieldset>
+					<h2>Advanced settings</h2>
+					<p>
+						<label for="checkType">Request type</label>
+						<select id="checkType">
+							<option>HEAD</option>
+							<option>GET</option>
+						</select>
+					</p>
+					<p>
+						<label for="contentStrings">String match in destination page - method must be GET</label>
+						<label for="ignore404" style="visibility: hidden">(String match only <input type="checkbox" id="ignore404" />)</label>
+						<textarea id="contentStrings"></textarea>
+					</p>
+				</fieldset>
+			</section>
+
+			<section id="sectionSettings" class="visible">
+
+			<fieldset>
+				<h2>Settings</h2>
 				<p>
 					<label for="blacklist">Blacklist</label>
 					<textarea id="blacklist"></textarea>
@@ -63,25 +139,14 @@
 					<textarea id="whitelist"></textarea>
 				</p>
 				<p>
-					<label for="requestType">Request type</label>
-					<select id="requestType">
-						<option>HEAD</option>
-						<option>GET</option>
-					</select>
-				</p>
-				<p>
-					<label for="contentStrings">String match</label>
-					(<label for="ignore404">String match only <input type="checkbox" id="ignore404" /></label>)
-					<textarea id="contentStrings"></textarea>
-				</p>
-				<p>
-
-				</p>
-				<p>
 					<label for="showStatusCode">Show status codes <input type="checkbox" id="showStatusCode" /></label>
+				</p>
+				<p>
+					<label for="ignoreHash">Ignore hash in URLs <input type="checkbox" id="ignoreHash" /></label>
 				</p>
 
 			</fieldset>
+			</section>
 			<p class="button">
 				<input type="button" class="reset" id="resetButton" value="Reset default options"/>
 			</p>
