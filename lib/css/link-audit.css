@@ -15,3 +15,9 @@ a.CE-linkAudit{
     top:50px;
     z-index: 9999;
 }
+#CE-linkAuditDisplay-status span {
+    display: inline-block;
+    width:24%;
+    text-align: center;
+
+}
