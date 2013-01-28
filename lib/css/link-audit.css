@@ -17,7 +17,10 @@ a.CE-linkAudit{
 }
 #CE-linkAuditDisplay-status span {
     display: inline-block;
-    width:24%;
+    width:33%;
     text-align: center;
 
+}
+#CE-linkAuditDisplay-status.CE-linkAudit-cols-4 span{
+    width:24%;
 }
