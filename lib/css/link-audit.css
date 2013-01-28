@@ -13,6 +13,7 @@ a.CE-linkAudit{
     border:1px solid #888;
     border-radius:5px;
     box-shadow: 5px 5px 5px rgba(0,0,0,0.5);
+	min-width:200px;
     padding: 10px;
     position: fixed;
     right:50px;
@@ -23,8 +24,17 @@ a.CE-linkAudit{
     display: inline-block;
     width:33%;
     text-align: center;
-
 }
 #CE-linkAuditDisplay-status.CE-linkAudit-cols-4 span{
     width:24%;
+}
+*.CE-linkAuditDisplay-move-handle {
+	cursor:move;
+}
+*.CE-linkAuditDisplay-move-active {
+	box-shadow: 15px 15px 15px rgba(0,0,0,0.5);
+	cursor: move;
+	margin:-3px 0 0 -3px;
+	opacity: 0.6;
+	-webkit-transform: scale(1.1);
 }

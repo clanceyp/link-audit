@@ -1,6 +1,6 @@
 {
 	"name": "Link audit, link checker. Find broken links"
-	,"version": "0.3"
+	,"version": "0.4"
 	,"manifest_version": 2
 	,"background":{
 		"scripts": [
@@ -24,7 +24,7 @@
 	],
 	"content_scripts": [{
 		"matches": ["http://*/*","https://*/*"]
-		,"js":["lib/js/constants.js","lib/js/underscore.js","lib/js/zepto.js","lib/js/content.js"]
+		,"js":["lib/js/constants.js","lib/js/underscore.js","lib/js/zepto.js","lib/js/zepto.drag.js","lib/js/content.js"]
 		,"css":["lib/css/link-audit.css"]
 	}]
 

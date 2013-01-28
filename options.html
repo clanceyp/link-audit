@@ -13,7 +13,8 @@
 	@import url(http://fonts.googleapis.com/css?family=Mr+Bedfort);
 	body {
 		/*background-image: url("lib/i/greentiles.png");*/
-		background-color: #efefef ;
+		background-color: rgba(5,171,224,1) ;
+		background-image: -webkit-radial-gradient(center, ellipse cover, rgba(207,241,252,1) 54%,rgba(83,203,241,1) 79%,rgba(5,171,224,1) 100%);
 		font-family: sans-serif;
 		font-size:70%;
 	}
@@ -26,7 +27,9 @@
 		padding:20px;
 		width:600px;
 	}
-
+	a {
+		color:#048;
+	}
 	h1,h2 {
 		font-family: "Mr Bedfort", "Dawning of a New Day", sans-serif;
 		font-size: 4em;
@@ -83,6 +86,9 @@
 		font-size: 1.2em;
 		padding:5px 12px;
 		text-decoration: none;
+	}
+	nav li.selected a {
+		color: #333;
 	}
 	section {
 		border: 1px solid #cecece;
