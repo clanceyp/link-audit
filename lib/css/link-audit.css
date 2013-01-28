@@ -1,8 +1,12 @@
 
 a.CE-linkAudit{
-    -webkit-transition-property: box-shadow, background-color;
-    -webkit-transition-duration: 300ms, 300ms;
+	background-image:none!important;
+    -webkit-transition-property: color, background-color;
+    -webkit-transition-duration: 500ms, 500ms;
     -webkit-transition-timing-function: linear, linear;
+}
+#CE-linkAuditDisplay input {
+	visibility: hidden;
 }
 #CE-linkAuditDisplay {
     background-color: #fff;
