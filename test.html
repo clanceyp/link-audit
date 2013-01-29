@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+<head>
+	<script src="lib/js/zepto.js"></script>
+	<style>
+		*.blah {
+			position:fixed;
+			top:300px;
+			left:300px;
+			border:1px solid blue;
+			background-color: #fff;
+			padding:20px;
+		}
+		#blah {
+			top:100px;
+		}
+		#blah2 {
+			top:200px
+		}
+		*.zepto-move-handle {
+			cursor:move;
+		}
+		*.zepto-move-active {
+			box-shadow: 5px 5px 5px rgba(0,0,0,0.5);
+			margin:-3px 0 0 -3px;
+			opacity: 0.6;
+			z-index: 10;
+		}
+		#blah span {}
+	</style>
+</head>
+<body>
+<div id="blah" class="blah"> Hello it's me! blah <span>(move)</span> </div>
+<div id="blah2" class="blah"> Hello it's me! blah2 <span>(move)</span> </div>
+<div id="blah3" class="blah"> Hello it's me! <strong>(move)</strong> </div>
+</body>
+<script>
+	(function($){
+		$.extend($.fn, {
+			drag:function(handle){
+				var h = handle;
+				return this.each(function(i,element){
+					var position = $(element).css("position"),
+						handleElement = (h && $(element).find(h).length) ? h : element,
+						moveHandleClass = "zepto-move-handle",
+						moveActiveClass = "zepto-move-active";
+
+					if (position === "static"){
+						$(element).css("position","relative");
+					}
+					$(handleElement).addClass(moveHandleClass).on("mousedown",startMoveElement);
+					function startMoveElement(e){
+						var x = e.x,
+							y = e.y,
+							startXY = [x,y],
+							offset = $(element).offset();
+
+						$(document).on("mousemove", moveElement);
+						$(document).on("mouseup",endMoveElement);
+						$(element).addClass(moveActiveClass);
+
+						function moveElement(e){
+							var ex = e.x,
+								ey = e.y,
+								X = (ex - startXY[0]),
+								Y = (ey - startXY[1]);
+
+							$(element).css({
+								"left": offset.left + X + "px",
+								"top": offset.top + Y + "px"
+							});
+							document.getSelection().removeAllRanges();
+						};
+						function endMoveElement(){
+							$(document).off("mousemove", moveElement);
+							$(element).removeClass(moveActiveClass);
+							document.getSelection().removeAllRanges();
+						};
+					}
+				});
+			}
+		});
+	})(Zepto);
+
+
+	$("#blah").drag();
+	$("#blah2").drag("span");
+	$("#blah3").drag("strong");
+</script>
+</html>

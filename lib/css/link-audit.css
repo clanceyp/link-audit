@@ -1,3 +1,4 @@
+@import url(http://fonts.googleapis.com/css?family=Joti+One);
 
 a.CE-linkAudit{
 	background-image:none!important;
@@ -5,29 +6,116 @@ a.CE-linkAudit{
     -webkit-transition-duration: 500ms, 500ms;
     -webkit-transition-timing-function: linear, linear;
 }
-#CE-linkAuditDisplay input {
-	visibility: hidden;
-}
+
+
 #CE-linkAuditDisplay {
-    background-color: #fff;
-    border:1px solid #888;
-    border-radius:5px;
-    box-shadow: 5px 5px 5px rgba(0,0,0,0.5);
+	box-shadow: inset 0 0 2px 2px rgba(255,255,255,0.1), 10px 10px 10px rgba(0,0,0,0.5);
+	background-color: #333;
+	border:1px solid #333;
+	border-radius:6px;
 	min-width:200px;
-    padding: 10px;
-    position: fixed;
-    right:50px;
-    top:50px;
-    z-index: 9999;
+	padding: 10px;
+	position: fixed;
+	right:50px;
+	top:50px;
+	z-index: 9999;
+}
+#CE-linkAuditDisplay h2 {
+	color: #888;
+	font-family: 'Joti One', sans-serif;
+	font-size:24px;
+	line-height:25px;
+	text-align: center;
+
+	text-shadow: 4px 4px 2px rgba(1, 1, 1, 1);
+}
+#CE-linkAuditDisplay input {
+	background-color: #333;
+	border: 1px solid #888;
+	border-radius:3px;
+	color:#888;
+	margin:3px 0 ;
+	padding:0;
+	visibility: hidden;
+	width:100%;
+}
+#CE-linkAuditDisplay input:active {
+	background-color: #888;
+	color:#333;
+}
+#CE-linkAuditDisplay.complete input {
+	visibility: visible;
+}
+#CE-linkAuditDisplay *.close {
+	color:#fff;
+	cursor: pointer;
+	position: absolute;
+	right:5px;
+	top:0px;
+}
+#CE-linkAuditDisplay-status {
+	position: relative;
+	border: 1px dotted #444;
 }
 #CE-linkAuditDisplay-status span {
-    display: inline-block;
-    width:33%;
-    text-align: center;
+	bottom:0;
+	box-shadow: inset 0 2px 4px rgba(255,255,255,0.5);
+	display: inline-block;
+	height:0;
+	overflow:hidden;
+	position:absolute;
+	text-align: center;
+	vertical-align: bottom;
+	width:33%;
+
+	-webkit-transition-property: height;
+	-webkit-transition-duration: 100ms;
+	-webkit-transition-timing-function: linear;
+}
+#CE-linkAuditDisplay-status span:nth-child(2) {
+	left:33%;
+}
+#CE-linkAuditDisplay-status span:nth-child(3) {
+	left:66%;
 }
 #CE-linkAuditDisplay-status.CE-linkAudit-cols-4 span{
-    width:24%;
+	width:25%;
 }
+#CE-linkAuditDisplay-status.CE-linkAudit-cols-4 span:nth-child(2) {
+	left:25%;
+}
+#CE-linkAuditDisplay-status.CE-linkAudit-cols-4 span:nth-child(3) {
+	left:50%;
+}
+#CE-linkAuditDisplay-status.CE-linkAudit-cols-4 span:nth-child(4) {
+	left:75%;
+}
+
+#CE-linkAuditDisplay-details-wrapper {
+	max-height: 300px;
+	overflow-y:auto;
+}
+#CE-linkAuditDisplay table {
+	border-collapse: collapse;
+	padding:3px 0;
+}
+#CE-linkAuditDisplay table a {
+	color:#eee;
+	text-decoration: none;
+}
+#CE-linkAuditDisplay table a:hover,
+#CE-linkAuditDisplay table a:focus {
+	color: white;
+	text-decoration: underline;
+}
+#CE-linkAuditDisplay table td {
+	padding: 2px 0 0 2px;
+}
+#CE-linkAuditDisplay table td:nth-child(1){
+	padding-right:10px;
+}
+
+
 *.CE-linkAuditDisplay-move-handle {
 	cursor:move;
 }
