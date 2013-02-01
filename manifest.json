@@ -6,6 +6,7 @@
 		"scripts": [
 			"lib/js/canvasRenderingContext2DroundRect.js"
 			,"lib/js/constants.js"
+			,"lib/js/underscore.js"
 			,"lib/js/background.js"
 		]
 	}

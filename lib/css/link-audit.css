@@ -35,11 +35,13 @@ a.CE-linkAudit{
 	text-shadow: 4px 4px 2px rgba(1, 1, 1, 1);
 }
 #CE-linkAuditDisplay input {
-    background-color: #444;
-	border: 1px solid #888;
+    background-color: rgba(30,156,129,1);
+    background-image: -webkit-linear-gradient(top,rgba(30,156,129,1) 42%,rgba(22,128,103,1) 50%,rgba(27,163,131,1) 100%);
+	border: 1px solid #006257;
 	border-radius:3px;
-	color:#ccc;
+	color:#fff;
     font-size: 11px;
+    font-weight: normal;
 	margin:3px 0 !important;
 	visibility: hidden;
 	width:100%;
@@ -107,8 +109,8 @@ a.CE-linkAudit{
 #CE-linkAuditDisplay table tr.failed td:nth-child(1){
     color:#f00;
 }
-#CE-linkAuditDisplay table tr.matched td:nth-child(1){
-    color:#fa0;
+#CE-linkAuditDisplay table tr.content-match td:nth-child(1){
+    color:rgba(255,204,0,1);
 }
 
 
