@@ -12,19 +12,25 @@
 <style type="text/css">
 	@import url(http://fonts.googleapis.com/css?family=Mr+Bedfort);
 	@import url(http://fonts.googleapis.com/css?family=Joti+One);
+	html {
+		overflow-y: scroll;
+	}
 	body {
 		/*background-image: url("lib/i/greentiles.png");*/
 		background-color: rgba(5,171,224,1) ;
-		background-image: -webkit-radial-gradient(center, ellipse cover, rgba(207,241,252,1) 54%,rgba(83,203,241,1) 79%,rgba(5,171,224,1) 100%);
+		/*background-image: -webkit-radial-gradient(center, ellipse cover, rgba(207,241,252,1) 54%,rgba(83,203,241,1) 79%,rgba(5,171,224,1) 100%);*/
+		background-image: -webkit-radial-gradient(center, ellipse cover, rgba(255,255,255,1) 0%, rgba(207,241,252,1) 54%, rgba(83,103,141,1) 79%, rgba(50,50,50,1) 100%);
 		font-family: sans-serif;
 		font-size:70%;
+		padding-bottom:60px;
 	}
-	form {
+	div.form {
 		background-color:#fff;
 		border: 1px solid #333;
 		border-radius:10px;
 		box-shadow: 10px 10px 10px rgba(0,0,0,0.5);
 		margin:30px auto;
+		min-height: 500px;
 		padding:20px;
 		width:600px;
 	}
@@ -32,7 +38,7 @@
 		color:#048;
 	}
 	h1,h2 {
-		font-family: "Mr Bedfort", "Dawning of a New Day", sans-serif;
+		font-family: "Joti One", "Mr Bedfort", "Dawning of a New Day", sans-serif;
 		font-size: 4em;
 		margin:0;
 		padding-top:0;
@@ -99,25 +105,44 @@
 </style>	
 </head> 
 	<body>
-		<form id="formMyOptions">
+		<div class="form">
+
 			<h1>Extension settings</h1>
 			<p>
 				Use the form below to enable/disable features
 			</p>
 			<nav>
 				<ul>
-					<li class="selected"><a href="#sectionSettings">Settings</a></li>
-					<li><a href="#sectionAdvancedSettings">Advanced settings</a></li>
+					<li><a href="#sectionSettings">Settings</a></li>
+					<li><a href="#sectionAdvancedSettings">Flag content</a></li>
+					<li class="selected"><a href="#sectionDonate">Donate!</a></li>
 					<!--
 					<li><a href="#sectionHowTo">How to...</a></li>
 					<li><a href="#sectionDonate">Donate</a></li>
 					-->
 				</ul>
 			</nav>
+			<section id="sectionDonate">
+				<fieldset>
+					<h2>Donate to our developers!</h2>
+					<p>Any donations gratefully received!!</p>
+					<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+						<input type="hidden" name="cmd" value="_s-xclick">
+						<input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----MIIHHgYJKoZIhvcNAQcEoIIHDzCCBwsCAQExggEwMIIBLAIBADCBlDCBjjELMAkGA1UEBhMCVVMxCzAJBgNVBAgTAkNBMRYwFAYDVQQHEw1Nb3VudGFpbiBWaWV3MRQwEgYDVQQKEwtQYXlQYWwgSW5jLjETMBEGA1UECxQKbGl2ZV9jZXJ0czERMA8GA1UEAxQIbGl2ZV9hcGkxHDAaBgkqhkiG9w0BCQEWDXJlQHBheXBhbC5jb20CAQAwDQYJKoZIhvcNAQEBBQAEgYBFz8Ur38FwKqLOaiMOv2oXguVCy1xtLCzVXBmvvA+7XaBmRVejor4i3po1QsPAFH/7mS9GQ73zUaejBhIF9vjavBZtttRmaYjc/d+uxG1mxf+zYEMyszcX7d43mYN1D2nkbvKHTDgzIW3Z+3LwRbtIuk3BV6fXpfzwNYswgvv9UjELMAkGBSsOAwIaBQAwgZsGCSqGSIb3DQEHATAUBggqhkiG9w0DBwQICblVlCYALfCAeHs7xV6HAQy7vGHWnwgU207PCVENRV8kCl4ZND+GkJ4dc24kaic9mp8Gens7ejNtfoMC3d0V8S2ivfB2PDJt+9Xvn0TWtpdYgU6gvvLI+oWgiaiCvfo4LTfNniPhYRM9THP18h2orv/BUX5Fzjgfu+tKR5QxS7al3qCCA4cwggODMIIC7KADAgECAgEAMA0GCSqGSIb3DQEBBQUAMIGOMQswCQYDVQQGEwJVUzELMAkGA1UECBMCQ0ExFjAUBgNVBAcTDU1vdW50YWluIFZpZXcxFDASBgNVBAoTC1BheVBhbCBJbmMuMRMwEQYDVQQLFApsaXZlX2NlcnRzMREwDwYDVQQDFAhsaXZlX2FwaTEcMBoGCSqGSIb3DQEJARYNcmVAcGF5cGFsLmNvbTAeFw0wNDAyMTMxMDEzMTVaFw0zNTAyMTMxMDEzMTVaMIGOMQswCQYDVQQGEwJVUzELMAkGA1UECBMCQ0ExFjAUBgNVBAcTDU1vdW50YWluIFZpZXcxFDASBgNVBAoTC1BheVBhbCBJbmMuMRMwEQYDVQQLFApsaXZlX2NlcnRzMREwDwYDVQQDFAhsaXZlX2FwaTEcMBoGCSqGSIb3DQEJARYNcmVAcGF5cGFsLmNvbTCBnzANBgkqhkiG9w0BAQEFAAOBjQAwgYkCgYEAwUdO3fxEzEtcnI7ZKZL412XvZPugoni7i7D7prCe0AtaHTc97CYgm7NsAtJyxNLixmhLV8pyIEaiHXWAh8fPKW+R017+EmXrr9EaquPmsVvTywAAE1PMNOKqo2kl4Gxiz9zZqIajOm1fZGWcGS0f5JQ2kBqNbvbg2/Za+GJ/qwUCAwEAAaOB7jCB6zAdBgNVHQ4EFgQUlp98u8ZvF71ZP1LXChvsENZklGswgbsGA1UdIwSBszCBsIAUlp98u8ZvF71ZP1LXChvsENZklGuhgZSkgZEwgY4xCzAJBgNVBAYTAlVTMQswCQYDVQQIEwJDQTEWMBQGA1UEBxMNTW91bnRhaW4gVmlldzEUMBIGA1UEChMLUGF5UGFsIEluYy4xEzARBgNVBAsUCmxpdmVfY2VydHMxETAPBgNVBAMUCGxpdmVfYXBpMRwwGgYJKoZIhvcNAQkBFg1yZUBwYXlwYWwuY29tggEAMAwGA1UdEwQFMAMBAf8wDQYJKoZIhvcNAQEFBQADgYEAgV86VpqAWuXvX6Oro4qJ1tYVIT5DgWpE692Ag422H7yRIr/9j/iKG4Thia/Oflx4TdL+IFJBAyPK9v6zZNZtBgPBynXb048hsP16l2vi0k5Q2JKiPDsEfBhGI+HnxLXEaUWAcVfCsQFvd2A1sxRr67ip5y2wwBelUecP3AjJ+YcxggGaMIIBlgIBATCBlDCBjjELMAkGA1UEBhMCVVMxCzAJBgNVBAgTAkNBMRYwFAYDVQQHEw1Nb3VudGFpbiBWaWV3MRQwEgYDVQQKEwtQYXlQYWwgSW5jLjETMBEGA1UECxQKbGl2ZV9jZXJ0czERMA8GA1UEAxQIbGl2ZV9hcGkxHDAaBgkqhkiG9w0BCQEWDXJlQHBheXBhbC5jb20CAQAwCQYFKw4DAhoFAKBdMBgGCSqGSIb3DQEJAzELBgkqhkiG9w0BBwEwHAYJKoZIhvcNAQkFMQ8XDTEzMDEzMTIwNDA1M1owIwYJKoZIhvcNAQkEMRYEFAt3qT69HyElcc9+J418w7/PSEcCMA0GCSqGSIb3DQEBAQUABIGAqGdwfIdDbgxIAugOEdOVinjv3L1rRLa7gpYidXHhbZH6sikXdGKzMAjPgWLsaf/6plncSFA4LU5JB/Q19rUVamAjPkQHSEJEvnVycBVB1L/kRNS7h/GEfoJeo/kx8Ko4mxD7U1pQzO8L1ohBsyWbjDikekQJnr5YUl6tFy8Ak64=-----END PKCS7-----
+">
+						<input type="image" src="https://www.paypalobjects.com/en_GB/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal — The safer, easier way to pay online.">
+						<img alt="" border="0" src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif" width="1" height="1">
+					</form>
+					<div style="width:300px;height:300px;overflow:hidden;position: relative;"><img src="lib/i/me-2013.png" style="width:400px;position: absolute; top:-20px;left:-40px" /></div>
 
+				</fieldset>
+			</section>
+
+			<form id="formMyOptions">
 			<section id="sectionAdvancedSettings" class="hidden">
 				<fieldset>
-					<h2>Advanced settings</h2>
+					<h2>Flag content</h2>
+
 					<p>
 						<label for="checkType">Request type</label>
 						<select id="checkType">
@@ -134,10 +159,13 @@
 						<label for="validateDomainOnly">Only validate links within the current domain</label>
 						<input type="checkbox" id="validateDomainOnly" />
 					</p>
+					<p class="button">
+						<input type="button" class="reset"  value="Reset default options"/>
+					</p>
 				</fieldset>
 			</section>
 
-			<section id="sectionSettings" class="visible">
+			<section id="sectionSettings" class="hidden">
 
 			<fieldset>
 				<h2>Settings</h2>
@@ -155,12 +183,13 @@
 				<p>
 					<label for="ignoreHash">Ignore hash in URLs <input type="checkbox" id="ignoreHash" /></label>
 				</p>
-
+				<p class="button">
+					<input type="button" class="reset"  value="Reset default options"/>
+				</p>
 			</fieldset>
 			</section>
-			<p class="button">
-				<input type="button" class="reset" id="resetButton" value="Reset default options"/>
-			</p>
+
 		</form>
+		</div>
 	</body>
 </html> 

@@ -1,15 +1,16 @@
 {
-	"name": "Link audit, link checker. Find broken links"
-	,"version": "0.6"
+	"name": "Link audit, checker, find invalid content."
+	,"version": "1.2"
 	,"manifest_version": 2
 	,"background":{
 		"scripts": [
-			"lib/js/background.js"
+			"lib/js/canvasRenderingContext2DroundRect.js"
 			,"lib/js/constants.js"
+			,"lib/js/background.js"
 		]
 	}
 	,"options_page": "options.html"
-	,"description": "This extension validates links and searches for content strings"
+	,"description": "This extension validates links, it checks HTTP status codes and can search linked content for messages"
 	,"icons": {
 		"48": "lib/i/48.png"
 	}
@@ -24,7 +25,7 @@
 	],
 	"content_scripts": [{
 		"matches": ["http://*/*","https://*/*"]
-		,"js":["lib/js/constants.js","lib/js/underscore.js","lib/js/zepto.js","lib/js/zepto.drag.js","lib/js/content.js"]
+		,"js":["lib/js/constants.js","lib/js/canvasRenderingContext2DroundRect.js","lib/js/underscore.js","lib/js/zepto.js","lib/js/zepto.drag.js","lib/js/content.js"]
 		,"css":["lib/css/link-audit.css"]
 	}]
 
