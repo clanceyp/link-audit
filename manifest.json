@@ -1,6 +1,6 @@
 {
 	"name": "Link audit, checker, find invalid content."
-	,"version": "1.2"
+	,"version": "1.4"
 	,"manifest_version": 2
 	,"background":{
 		"scripts": [
@@ -13,7 +13,7 @@
 	,"options_page": "options.html"
 	,"description": "This extension validates links, it checks HTTP status codes and can search linked content for messages"
 	,"icons": {
-		"48": "lib/i/48.png"
+		"48": "lib/i/128.png"
 	}
 	,"browser_action": {
 		"default_icon": "lib/i/48.png"

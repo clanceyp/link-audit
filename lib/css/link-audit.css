@@ -42,13 +42,14 @@ a.CE-linkAudit{
 	color:#fff;
     font-size: 11px;
     font-weight: normal;
+    line-height:17px;
 	margin:3px 0 !important;
 	visibility: hidden;
 	width:100%;
 }
 #CE-linkAuditDisplay input:active {
 	background-color: #888;
-	color:#333;
+	color:#800;
 }
 #CE-linkAuditDisplay.complete input {
 	visibility: visible;
