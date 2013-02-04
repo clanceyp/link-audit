@@ -9,7 +9,8 @@
 	<title>Extension options</title>
 
 
-<style type="text/css">
+
+	<style type="text/css">
 	@import url(http://fonts.googleapis.com/css?family=Mr+Bedfort);
 	@import url(http://fonts.googleapis.com/css?family=Joti+One);
 	html {
@@ -56,7 +57,7 @@
 	textarea {
 		display: block;
 		min-height: 80px;
-		min-width:400px;
+		min-width:436px;
 	}
 	fieldset {
 		border: 0 none;
@@ -106,8 +107,57 @@
 		padding: 10px;
 	}
 	#maxQueueLengthDisplay {
+		color: #800;
 		display: inline-block;
-		min-width: 10px;
+		margin-left: 3px;
+		min-width: 20px;
+		font-weight: bold;
+	}
+	*.help {
+		background-color: rgba(207,241,252,1);
+		border:1px solid rgba(83,103,141,1);
+		border-radius: 4px;
+		box-shadow: 3px 3px 3px rgba(0,0,0,0.3);
+		display: inline-block;
+		left:20px;
+		opacity: 0;
+		padding:8px;
+		position: absolute;
+		top:-4px;
+		width:130px;
+		z-index: 1;
+
+		-webkit-transition-property: opacity;
+		-webkit-transition-duration: 500ms;
+		-webkit-transition-timing-function: linear;
+	}
+	span.more {
+		background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAopJREFUeNp0k19IU1Ecx3/nur9KluafkKVLA4WQUbaI6MkejLAIqgchsH8vKSbMiBUY0kNImBlaFhgUBD1ED5Eklr301F/dFGEiOp06mzp1c/fPzr13p3NuOra5fvC5v8vv/r7f87uHcxAhBAbHw7AVT17/yqHpMqWKcpDCUVyb9DVePLwCCYESDbpf/WgzGXUtleUF+sK8rIz83Vkcoj3Lq4K6HBRUtycgi5Lc1VR/pDXJYGAsBN0vv3VYLbsaqo/vNwU2VLQuqBAWVSC0KducATspRdk68vX7tDTpDT5runTUETeoaf7YWlaSe9tuLzO7fALIKoGfM9OJk4LdWgo6Oo+tOBPcLq84MbXy8MaVY62ouuF9kcmonzh10pblXpCoIcCwzwu/204kGVS1fYFDxfu0d5vFTD4PjfIRPlrOqbJytbJij8E1J6AoVgHLqiaufz4ZhwWrsW+MkVkeVZQVGJhWp8hKjWow6yIRJb5aXY8H0gUTa5k9sjOZ9rROwUpFUAIOYzWt6J3jgJbPdY4n1QORDI5qS6mLLC+vSYQghFLF/U6blmvb3dunwQpQLbAxpkReKEAGE4L/RDTNdATjGNXOs18YVNbW7SQn35DaZG3u13LJjsJtBigUUqh2iKMuL9bm/TgalcnWLm8x87hWI7XOxl/1zWGq7eM8nxr9Qpjvinino6mNibufSNjrlcQw/9TRcsajncTeAR88uP+2U5+bd92412pEHJd+P2IxkBZ8kryy1HvrzgXtKHP/6gRuOs87pKVAx8boMC/4FzDmxZiixIAhC2JMXPTj8JiLl/4sPmK9TMPQJujpn4kv0n7vjYWma5SzlNLN8izlA7vOzrt1SZfkrwADADHTjb87FtdzAAAAAElFTkSuQmCC');
+		background-position: 0 1px;
+		background-repeat: no-repeat;
+		cursor: default;
+		display: inline-block;
+		min-height: 18px;
+		min-width: 18px;
+		position: relative;
+		float:right;
+		margin-right: 130px;
+	}
+	span.more:focus span.help,
+	span.more:hover span.help{
+		opacity: 1;
+	}
+	form.donate {
+		margin:0 0 10px 0;
+		text-align: center;
+		width:300px;
+	}
+	form.donate input:hover{
+		-webkit-transform: scale(1.05)
+	}
+	#maxQueueLength {
+		position: relative;
+		top: 4px;
 	}
 </style>	
 </head> 
@@ -121,26 +171,26 @@
 			<nav>
 				<ul>
 					<li><a href="#sectionSettings">Settings</a></li>
-					<li><a href="#sectionAdvancedSettings">Flag content</a></li>
-					<li class="selected"><a href="#sectionDonate">Donate!</a></li>
+					<li><a href="#sectionAdvancedSettings">Find content</a></li>
+					<li><a href="#sectionDonate">Donate!</a></li>
 					<!--
 					<li><a href="#sectionHowTo">How to...</a></li>
 					<li><a href="#sectionDonate">Donate</a></li>
 					-->
 				</ul>
 			</nav>
-			<section id="sectionDonate">
+			<section id="sectionDonate" class="hidden">
 				<fieldset>
 					<h2>Donate to our developers!</h2>
-					<p>Any donations gratefully received!!</p>
-					<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+					<p>Any and all donations gratefully received!!</p>
+					<form action="https://www.paypal.com/cgi-bin/webscr" id="formDonate" method="post" class="donate">
 						<input type="hidden" name="cmd" value="_s-xclick">
 						<input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
 ">
 						<input type="image" src="https://www.paypalobjects.com/en_GB/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal — The safer, easier way to pay online.">
 						<img alt="" border="0" src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif" width="1" height="1">
 					</form>
-					<div style="width:300px;height:300px;overflow:hidden;position: relative;"><img src="lib/i/me-2013.png" style="width:400px;position: absolute; top:-20px;left:-40px" /></div>
+					<div style="width:300px;height:300px;overflow:hidden;position: relative;border:1px solid rgba(83,103,141,1);margin-bottom:20px;"><img src="lib/i/me-2013.png" style="width:400px;position: absolute; top:-20px;left:-40px" /></div>
 
 				</fieldset>
 			</section>
@@ -148,9 +198,10 @@
 			<form id="formMyOptions">
 			<section id="sectionAdvancedSettings" class="hidden">
 				<fieldset>
-					<h2>Flag content</h2>
+					<h2>Find content</h2>
 
 					<p>
+						<span class="more">&nbsp;&nbsp;&nbsp;&nbsp;<span class="help" tabindex="0">Request type HEAD is faster but some servers may have problems with this. Set to GET if your having trouble.</span></span>
 						<label for="checkType">Request type</label>
 						<select id="checkType">
 							<option>HEAD</option>
@@ -158,7 +209,8 @@
 						</select>
 					</p>
 					<p>
-						<label for="contentStrings">Find a string match in destination page - method must be GET</label>
+						<span class="more">&nbsp;&nbsp;&nbsp;&nbsp;<span class="help" tabindex="0">Find a word or HTML snippet in destination pages - method must be GET.</span></span>
+						<label for="contentStrings">Find in linked pages (link separated list)</label>
 						<label for="ignore404" style="visibility: hidden">(String match only <input type="checkbox" id="ignore404" />)</label>
 						<textarea id="contentStrings"></textarea>
 					</p>
@@ -173,25 +225,30 @@
 			<fieldset>
 				<h2>Settings</h2>
 				<p>
-					<label for="blacklist">Blacklist</label>
+					<span class="more">&nbsp;&nbsp;&nbsp;&nbsp;<span class="help" tabindex="0">Add URLs or parts of URLs you don't want to validate, e.g. google.com or logout.htm</span></span>
+					<label for="blacklist">Blacklist (line separated list)</label>
 					<textarea id="blacklist"></textarea>
 				</p>
 				<p>
-					<label for="whitelist">White list</label>
+					<span class="more">&nbsp;&nbsp;&nbsp;&nbsp;<span class="help" tabindex="0">Only needed if checking a list of URLs, a single folder, a single file type etc...</span></span>
+					<label for="whitelist">White list (line separated list)</label>
 					<textarea id="whitelist"></textarea>
 				</p>
 				<p>
-					<label for="maxQueueLength">Concurrent requests <span id="maxQueueLengthDisplay"></span></label>
+					<span class="more">&nbsp;&nbsp;&nbsp;&nbsp;<span class="help" tabindex="0">Lower number is slower, but better results</span></span>
+					<label for="maxQueueLength">Concurrent requests, <span id="maxQueueLengthDisplay"></span></label>
 					<input type="range" id="maxQueueLength" min="1" max="100" />
 				</p>
 				<p>
+					<span class="more">&nbsp;&nbsp;&nbsp;&nbsp;<span class="help" tabindex="0">Show http status code</span></span>
 					<label for="showStatusCode">Show status codes <input type="checkbox" id="showStatusCode" /></label>
 				</p>
 				<p>
+					<span class="more">&nbsp;&nbsp;&nbsp;&nbsp;<span class="help" tabindex="0">Check local links only</span></span>
 					<label for="validateDomainOnly">Only validate links within the current domain <input type="checkbox" id="validateDomainOnly" /></label>
-
 				</p>
 				<p>
+					<span class="more">&nbsp;&nbsp;&nbsp;&nbsp;<span class="help" tabindex="0">Link audit ignores hash differences in URLs to prevent the same URL being validated multiple times</span></span>
 					<label for="ignoreHash">Ignore hash in URLs <input type="checkbox" id="ignoreHash" /></label>
 				</p>
 				<p class="button">
