@@ -46,7 +46,7 @@ a.CE-linkAudit{
     font-weight: normal;
     line-height:17px;
 	margin:3px 0 !important;
-	visibility: hidden;
+	opacity: 0.2;
 	width:100%;
 }
 #CE-linkAuditDisplay input:active {
@@ -54,7 +54,7 @@ a.CE-linkAudit{
 	color:#800;
 }
 #CE-linkAuditDisplay.complete input {
-	visibility: visible;
+	opacity:1;
 }
 #CE-linkAuditDisplay *.close {
 	color:#888;
@@ -100,19 +100,19 @@ a.CE-linkAudit{
 }
 #CE-linkAuditDisplay table td {
     color:#888;
-    font-size: 11px;
+    font-size: 11px !important;
 	padding: 2px 0 0 2px!important;
 }
 #CE-linkAuditDisplay table td:nth-child(1){
 	padding-right:10px!important;
 }
-#CE-linkAuditDisplay table tr.success td:nth-child(1){
+#CE-linkAuditDisplay table tr.CE-linkAudit-status-success td:nth-child(1){
     color:#0c0;
 }
-#CE-linkAuditDisplay table tr.failed td:nth-child(1){
-    color:#f00;
+#CE-linkAuditDisplay table tr.CE-linkAudit-status-failed td:nth-child(1){
+	color:#f00;
 }
-#CE-linkAuditDisplay table tr.content-match td:nth-child(1){
+#CE-linkAuditDisplay table tr.CE-linkAudit-status-content-match td:nth-child(1){
     color:rgba(255,204,0,1);
 }
 
