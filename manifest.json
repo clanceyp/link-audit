@@ -1,6 +1,6 @@
 {
 	"name": "Link audit checker, find invalid content."
-	,"version": "2.7"
+	,"version": "3.0"
 	,"manifest_version": 2
 	,"background":{
 		"scripts": [
@@ -23,6 +23,9 @@
 		"tabs"
 		,"http://*/*"
 		,"https://*/*"
+	],
+	"web_accessible_resources":[
+		"lib/i/*.png"
 	],
 	"content_scripts": [{
 		"matches": ["http://*/*","https://*/*"]

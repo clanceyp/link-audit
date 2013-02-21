@@ -6,7 +6,11 @@ a.CE-linkAudit{
     -webkit-transition-duration: 500ms, 500ms;
     -webkit-transition-timing-function: linear, linear;
 }
-
+#CE-linkAuditDisplay-process {
+	-webkit-transition-property: opacity;
+	-webkit-transition-duration: 500ms;
+	-webkit-transition-timing-function: linear;
+}
 #CE-linkAuditDisplay * {
     margin:0!important;
     padding:0!important;
@@ -17,6 +21,7 @@ a.CE-linkAudit{
 	border:1px solid #333;
 	border-radius:6px;
 	min-width:200px;
+	overflow: hidden;
 	padding: 10px;
 	position: fixed;
 	right:50px;
@@ -49,12 +54,23 @@ a.CE-linkAudit{
 	opacity: 0.2;
 	width:100%;
 }
+#CE-linkAuditDisplay #CE-linkAuditDisplay-nolink-message {
+	background-color:#bbb;
+	border-radius:5px;
+	box-shadow: inset 2px 2px 2px rgba(0,0,0,0.5);
+	color:#000;
+	padding:20px 30px!important;
+	text-align: center;
+}
 #CE-linkAuditDisplay input:active {
 	background-color: #888;
 	color:#800;
 }
 #CE-linkAuditDisplay.complete input {
 	opacity:1;
+}
+#CE-linkAuditDisplay.complete #CE-linkAuditDisplay-process {
+	opacity: 0;
 }
 #CE-linkAuditDisplay *.close {
 	color:#888;
@@ -126,4 +142,32 @@ a.CE-linkAudit{
 	margin:-3px 0 0 -3px!important;
 	opacity: 0.8;
 	-webkit-transform: scale(1.05);
+}
+
+
+@-webkit-keyframes rotate {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+#CE-linkAuditDisplay img.spin
+{
+	border: 0;
+	height: auto;
+	opacity: 0.2;
+	padding:0;
+	position: absolute;
+	right: -124px;
+	top:-124px;
+	width: auto;
+	z-index: -1;
+
+	-webkit-animation-name:             rotate;
+	-webkit-animation-duration:         3s;
+	-webkit-animation-iteration-count:  infinite;
+	-webkit-animation-timing-function: linear;
 }
