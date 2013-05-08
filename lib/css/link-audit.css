@@ -9,32 +9,36 @@ a.CE-linkAudit{
 
 #CE-linkAuditDisplay * {
     margin:0!important;
+    min-width:0!important;
+    max-width:100%!important;
     padding:0!important;
 }
 #CE-linkAuditDisplay {
 	box-shadow: inset 0 0 2px 2px rgba(255,255,255,0.1), 10px 10px 10px rgba(0,0,0,0.5);
-	background-color: #333;
-	border:1px solid #333;
-	border-radius:6px;
-	min-width:200px;
-	padding: 10px;
-	position: fixed;
-	right:50px;
-	top:50px;
-	z-index: 9999;
+	background-color: #333!important;
+	border:1px solid #333!important;
+	border-radius:6px!important;
+	min-width:200px!important;
+	padding: 10px!important;
+	position: fixed!important;
+	right:50px!important;
+	top:50px!important;
+	z-index: 9999!important;
 }
-#CE-linkAuditDisplay h2 {
+#CE-linkAuditDisplay span.h2 {
     border: 0 none!important;
-	color: #888;
-	font-family: 'Joti One', sans-serif;
-	font-size:24px;
-	line-height:30px;
+    background-color: transparent;
+    color: #888;
+    display: block;
+    font-family: 'Joti One', sans-serif;
+    font-size:24px;
+    line-height:30px;
     margin:-3px 30px 0 30px;
     margin-top: -3px!important;
     outline: 0 none!important;
-	text-align: center;
+    text-align: center;
 
-	text-shadow: 4px 4px 2px rgba(1, 1, 1, 1);
+    text-shadow: 4px 4px 2px rgba(1, 1, 1, 1);
 }
 #CE-linkAuditDisplay input {
     background-color: rgba(30,156,129,1);
