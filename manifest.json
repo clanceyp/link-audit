@@ -1,6 +1,6 @@
 {
 	"name": "Link audit checker, find invalid content."
-	,"version": "3.0"
+	,"version": "3.1"
 	,"manifest_version": 2
 	,"background":{
 		"scripts": [
@@ -24,14 +24,19 @@
 		,"http://*/*"
 		,"https://*/*"
 	],
+	"web_accessible_resources":[
+		"lib/i/*.png"
+	],
 	"content_scripts": [{
 		"matches": ["http://*/*","https://*/*"]
-		,"js":["lib/js/constants.js",
+		,"js":[
+            "lib/js/constants.js",
             "lib/js/canvasRenderingContext2DroundRect.js",
             "lib/js/vendor/underscore.js",
             "lib/js/vendor/zepto.js",
             "lib/js/zepto.drag.js",
-            "lib/js/content.js"]
+            "lib/js/content.js"
+        ]
 		,"css":["lib/css/link-audit.css"]
 	}]
 
