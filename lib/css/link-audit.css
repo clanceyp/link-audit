@@ -13,6 +13,8 @@ a.CE-linkAudit{
 }
 #CE-linkAuditDisplay * {
     margin:0!important;
+    min-width:0!important;
+    max-width:100%!important;
     padding:0!important;
 }
 #CE-linkAuditDisplay {
@@ -28,18 +30,20 @@ a.CE-linkAudit{
 	top:50px;
 	z-index: 9999;
 }
-#CE-linkAuditDisplay h2 {
+#CE-linkAuditDisplay span.h2 {
     border: 0 none!important;
-	color: #888;
-	font-family: 'Joti One', sans-serif;
-	font-size:24px;
-	line-height:30px;
+    background-color: transparent;
+    color: #888;
+    display: block;
+    font-family: 'Joti One', sans-serif;
+    font-size:24px;
+    line-height:30px;
     margin:-3px 30px 0 30px;
     margin-top: -3px!important;
     outline: 0 none!important;
-	text-align: center;
+    text-align: center;
 
-	text-shadow: 4px 4px 2px rgba(1, 1, 1, 1);
+    text-shadow: 4px 4px 2px rgba(1, 1, 1, 1);
 }
 #CE-linkAuditDisplay input {
     background-color: rgba(30,156,129,1);
