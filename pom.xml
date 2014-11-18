@@ -1,0 +1,37 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>	
+	<groupId>test-maven-release-git</groupId>
+	<artifactId>submodule</artifactId>
+	<version>0.1</version>
+
+	<scm>
+		<connection>scm:https://github.com/clanceyp/link-audit.git</connection>
+		<developerConnection>scm:git:github</developerConnection>
+	</scm>
+
+	<properties>
+		<github.projectName>test-maven-release-with-git---submodule</github.projectName>
+		<github.projectOwner>clanceyp</github.projectOwner>
+	</properties>
+
+	<distributionManagement>
+		<repository>
+			<id>test.repo</id>
+			<name>Test Maven repository</name>
+			<url>file:///Users/patrickclancley/github/link-audit/temp</url> 
+		</repository>
+	</distributionManagement>
+
+	<build>	
+		<plugins>
+			<plugin>
+				<artifactId>maven-release-plugin</artifactId>
+				<version>2.1</version>
+				<configuration>
+					<autoVersionSubmodules>true</autoVersionSubmodules>
+				</configuration>
+			</plugin>
+		</plugins>
+		
+	</build>
+</project>
