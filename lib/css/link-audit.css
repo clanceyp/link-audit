@@ -1,6 +1,3 @@
-@import url('https://fonts.googleapis.com/css?family=Joti+One');
-
-
 a.CE-linkAudit{
 	background-image:none!important;
     -webkit-transition-property: color, background-color;
@@ -12,17 +9,22 @@ a.CE-linkAudit{
 	-webkit-transition-duration: 500ms;
 	-webkit-transition-timing-function: linear;
 }
+#CE-linkAuditDisplay {
+	width: 380px;
+}
 #CE-linkAuditDisplay * {
     margin:0!important;
     min-width:0!important;
     max-width:100%!important;
     padding:0!important;
+	font-weight: normal;
 }
 #CE-linkAuditDisplay {
 	box-shadow: inset 0 0 2px 2px rgba(255,255,255,0.1), 10px 10px 10px rgba(0,0,0,0.5);
 	background-color: #333;
 	border:1px solid #333;
 	border-radius:6px;
+	font-family: sans-serif;
 	min-width:200px;
 	overflow: hidden;
 	padding: 10px;
@@ -33,16 +35,17 @@ a.CE-linkAudit{
 }
 #CE-linkAuditDisplay span.h2 {
     border: 0 none!important;
-    background-color: transparent;
-    color: #888;
+    background-color: transparent!important;
+    color: #888!important;
     display: block;
-    font-family: 'Joti One', sans-serif;
-    font-size:24px;
-    line-height:30px;
-    margin:-3px 30px 0 30px;
-    margin-top: -3px!important;
+    font-family: sans-serif!important;
+    font-size: 24px!important;
+	font-weight: normal!important;
+    line-height: 24px!important;
+    margin:-3px 30px 0 30px!important;
     outline: 0 none!important;
-    text-align: center;
+	padding-bottom: 6px!important;
+    text-align: center!important;
 
     text-shadow: 4px 4px 2px rgba(1, 1, 1, 1);
 }
@@ -80,11 +83,10 @@ a.CE-linkAudit{
 #CE-linkAuditDisplay *.close {
 	color:#888;
 	cursor: pointer;
-    font-family: 'Joti One', sans-serif;
-    font-size:12px;
+    font-size: 16px;
 	position: absolute;
-	right:5px;
-	top:0px;
+	right: 8px;
+	top: 0px;
 }
 #CE-linkAuditDisplay *.close:hover,
 #CE-linkAuditDisplay *.close:focus {
@@ -108,24 +110,38 @@ a.CE-linkAudit{
 }
 #CE-linkAuditDisplay table {
 	border-collapse: collapse;
+	max-width: 98%;
 	padding:3px 0;
 }
 #CE-linkAuditDisplay table a {
 	color:#eee;
 	text-decoration: none;
 }
+#CE-linkAuditDisplay table a[data-http-status-code]:not([data-http-status-code='-1']):after {
+	content: " (" attr(data-http-status-code) ")";
+	opacity: .7;
+}
 #CE-linkAuditDisplay table a:hover,
 #CE-linkAuditDisplay table a:focus {
 	color: white;
 	text-decoration: underline;
+}
+#CE-linkAuditDisplay table th {
+	color: #949494;
+	font-size: 13px !important;
+	padding: 2px!important;
 }
 #CE-linkAuditDisplay table td {
     color:#888;
     font-size: 11px !important;
 	padding: 2px 0 0 2px!important;
 }
-#CE-linkAuditDisplay table td:nth-child(1){
+#CE-linkAuditDisplay table td:first-child{
 	padding-right:10px!important;
+	vertical-align: top;
+}
+#CE-linkAuditDisplay table td:last-child{
+	word-break: break-all;
 }
 #CE-linkAuditDisplay table tr.CE-linkAudit-status-success td:nth-child(1){
     color:#0c0;

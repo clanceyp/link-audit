@@ -1,6 +1,6 @@
 {
 	"name": "Link Audit Checker, find invalid content."
-	,"version": "3.5"
+	,"version": "3.6.0"
 	,"manifest_version": 2
 	,"background":{
 		"scripts": [
@@ -17,7 +17,7 @@
 	}
 	,"browser_action": {
 		"default_icon": "lib/i/48.png"
-		,"default_title": "Link Audit 3.5"
+		,"default_title": "Link Audit 3.6.0"
 	}
 	,"permissions": [
 		"tabs"
