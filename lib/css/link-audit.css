@@ -102,6 +102,9 @@ a.CE-linkAudit{
 #CE-linkAuditDisplay *.close:focus {
     color:#fff;
 }
+#CE-linkAuditDisplay [data-download-csv] {
+	cursor: pointer;
+}
 /*
 #CE-linkAuditDisplay-status {
     background-image: -webkit-linear-gradient(left, #444 0%, #666 66.6%, #888 66.6%);
