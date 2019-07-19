@@ -267,6 +267,10 @@
 					<span class="more">&nbsp;&nbsp;&nbsp;&nbsp;<span class="help" tabindex="0">Link audit ignores hash differences in URLs to prevent the same URL being validated multiple times</span></span>
 					<label for="ignoreHash">Ignore hash in URLs <input type="checkbox" id="ignoreHash" /></label>
 				</p>
+				<p>
+					<span class="more">&nbsp;&nbsp;&nbsp;&nbsp;<span class="help" tabindex="0">By default 40x are all reported as errors, to ignore permissions add comma separated list of status codes e.g. 401, 403 </span></span>
+					<label for="ignorePermissions">Consider response valid <input type="text" id="ignorePermissions" /></label>
+				</p>
 				<p class="button">
 					<input type="button" class="reset"  value="Reset default options"/>
 				</p>
